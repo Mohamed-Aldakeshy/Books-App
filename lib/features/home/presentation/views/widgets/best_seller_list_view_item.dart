@@ -6,13 +6,13 @@ import 'package:books_app/features/home/presentation/views/widgets/book_rating.d
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class BestSellerListViewItem extends StatelessWidget {
-  const BestSellerListViewItem({super.key});
+class BookListViewItem extends StatelessWidget {
+  const BookListViewItem({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 20, right: 20, bottom: 20),
+      padding: const EdgeInsets.only(left: 10, right: 10, bottom: 20),
       child: GestureDetector(
         onTap: () {
           GoRouter.of(context).push(AppRouter.kBookDetailsView);
