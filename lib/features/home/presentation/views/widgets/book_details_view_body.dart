@@ -1,7 +1,7 @@
 import 'package:books_app/core/utils/styles.dart';
-import 'package:books_app/core/widgets/custom_button.dart';
 import 'package:books_app/features/home/presentation/views/widgets/book_rating.dart';
 import 'package:books_app/features/home/presentation/views/widgets/books_action.dart';
+import 'package:books_app/features/home/presentation/views/widgets/books_details_list_view.dart';
 import 'package:books_app/features/home/presentation/views/widgets/custom_book_details_app_bar.dart';
 import 'package:books_app/features/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:flutter/material.dart';
@@ -53,6 +53,23 @@ class BookDetailsViewBody extends StatelessWidget {
             height: 37,
           ),
           BooksAction(),
+          const SizedBox(
+            height: 30,
+          ),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              'You can also like',
+              style: Style.textStyle14.copyWith(fontWeight: FontWeight.w600),
+            ),
+          ),
+          const SizedBox(
+            height: 16,
+          ),
+          BooksDetailsListView(),
+          SizedBox(
+            height: 10,
+          ),
         ],
       ),
     );
