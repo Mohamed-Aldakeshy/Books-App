@@ -16,7 +16,7 @@ class HomeViewBody extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CustomAppBar(),
-              FeaturedBooksListView(),
+              FeaturedBooksListView(), //here we used cubit
               const SizedBox(
                 height: 50,
               ),
@@ -34,7 +34,7 @@ class HomeViewBody extends StatelessWidget {
           ),
         ),
         const SliverFillRemaining(
-          child: BestSellerListView(),
+          child: BestSellerListView(), //here we use cubit
         ),
       ],
     );
