@@ -23,5 +23,5 @@ class FeauteredBooksFailure extends FeauteredBooksState {
 class FeauteredBooksSuccess extends FeauteredBooksState {
   final List<BookModel> cubitBooksList;
 
-  const FeauteredBooksSuccess(this.cubitBooksList);
+  const FeauteredBooksSuccess({required this.cubitBooksList});
 }
