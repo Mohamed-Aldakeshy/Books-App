@@ -2,7 +2,7 @@ import 'package:books_app/core/widgets/custom_error_widget.dart';
 import 'package:books_app/core/widgets/custom_loading_indicator.dart';
 import 'package:books_app/features/home/presentation/manager/newest_boos_cubit.dart/newest_books_cubit.dart';
 import 'package:books_app/features/home/presentation/manager/newest_boos_cubit.dart/newest_books_state.dart';
-import 'package:books_app/features/home/presentation/views/widgets/best_seller_list_view_item.dart';
+import 'package:books_app/features/home/presentation/views/widgets/newest_seller_list_view_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

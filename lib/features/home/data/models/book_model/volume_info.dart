@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:equatable/equatable.dart';
 
 import 'image_links.dart';
@@ -16,7 +18,7 @@ class VolumeInfo extends Equatable {
   final int? pageCount;
   final String? printType;
   final List<String>? categories;
-  final int? averageRating;
+  final dynamic averageRating;
   final int? ratingsCount;
   final String? maturityRating;
   final bool? allowAnonLogging;
