@@ -1,8 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:books_app/features/home/data/repos/home_repo.dart';
 import 'package:books_app/features/home/presentation/manager/similar_books_cubit/similar_books_state.dart';
-import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
 
 class SimilarBooksCubit extends Cubit<SimilarBooksState> {
   SimilarBooksCubit(this.homeRepo) : super(SimilarBooksIniatial());

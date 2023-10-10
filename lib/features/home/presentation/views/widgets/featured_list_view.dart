@@ -1,3 +1,4 @@
+import 'package:books_app/core/utils/app_router.dart';
 import 'package:books_app/core/widgets/custom_error_widget.dart';
 import 'package:books_app/core/widgets/custom_loading_indicator.dart';
 import 'package:books_app/features/home/presentation/manager/feautered_books_cubit.dart/feautered_books_cubit.dart';
@@ -5,6 +6,7 @@ import 'package:books_app/features/home/presentation/manager/feautered_books_cub
 import 'package:books_app/features/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 class FeaturedBooksListView extends StatelessWidget {
   const FeaturedBooksListView({super.key});
@@ -23,10 +25,16 @@ class FeaturedBooksListView extends StatelessWidget {
               itemBuilder: (context, index) {
                 return Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 8),
-                  child: CustomBookImage(
-                    imageUrl: state.cubitBooksList[index].volumeInfo?.imageLinks
-                            ?.thumbnail ??
-                        'https://t3.ftcdn.net/jpg/01/38/48/40/360_F_138484065_1enzXuW8NlkppNxSv4hVUrYoeF8qgoeY.jpg',
+                  child: GestureDetector(
+                    onTap: () {
+                      GoRouter.of(context).push(AppRouter.kBookDetailsView,
+                          extra: state.cubitBooksList[index]);
+                    },
+                    child: CustomBookImage(
+                      imageUrl: state.cubitBooksList[index].volumeInfo
+                              ?.imageLinks?.thumbnail ??
+                          'https://t3.ftcdn.net/jpg/01/38/48/40/360_F_138484065_1enzXuW8NlkppNxSv4hVUrYoeF8qgoeY.jpg',
+                    ),
                   ),
                 );
               },
