@@ -17,9 +17,11 @@ class BestSellerListView extends StatelessWidget {
         return ListView.builder(
           physics: const NeverScrollableScrollPhysics(),
           padding: EdgeInsets.zero,
-          itemCount: 10,
+          itemCount: state.newestBooksCubitList.length,
           itemBuilder: (context, index) {
-            return const BookListViewItem();
+            return BookListViewItem(
+              bookModel: state.newestBooksCubitList[index],
+            );
           },
         );
       } else if (state is NewestBooksFailure) {

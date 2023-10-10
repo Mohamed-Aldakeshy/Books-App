@@ -25,7 +25,7 @@ class BookDetailsViewBody extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: width * 0.2),
                   child: const CustomBookImage(
-                    imagerl:
+                    imageUrl:
                         'https://t3.ftcdn.net/jpg/01/38/48/40/360_F_138484065_1enzXuW8NlkppNxSv4hVUrYoeF8qgoeY.jpg',
                   ),
                 ),
@@ -54,7 +54,9 @@ class BookDetailsViewBody extends StatelessWidget {
                 const SizedBox(
                   height: 18,
                 ),
-                const BookRating(
+                BookRating(
+                  rating: 0,
+                  count: 0,
                   mainAxisAlignment: MainAxisAlignment.center,
                 ),
                 const SizedBox(
