@@ -1,6 +1,5 @@
 import 'package:books_app/core/utils/styles.dart';
 import 'package:books_app/features/home/data/models/book_model/book_model.dart';
-import 'package:books_app/features/home/data/models/book_model/volume_info.dart';
 import 'package:books_app/features/home/presentation/views/widgets/book_rating.dart';
 import 'package:books_app/features/home/presentation/views/widgets/books_action.dart';
 import 'package:books_app/features/home/presentation/views/widgets/books_details_list_view.dart';
@@ -72,7 +71,9 @@ class BookDetailsViewBody extends StatelessWidget {
                 const SizedBox(
                   height: 37,
                 ),
-                BooksAction(),
+                BooksAction(
+                  bookModel: bookModel,
+                ),
                 const Expanded(
                   child: SizedBox(
                     height: 30,
@@ -81,7 +82,7 @@ class BookDetailsViewBody extends StatelessWidget {
                 Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
-                    'You can also like',
+                    'Suggested for you',
                     style:
                         Style.textStyle14.copyWith(fontWeight: FontWeight.w600),
                   ),

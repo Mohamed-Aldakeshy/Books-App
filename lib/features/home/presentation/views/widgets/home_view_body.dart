@@ -35,7 +35,7 @@ class HomeViewBody extends StatelessWidget {
           ),
         ),
         const SliverFillRemaining(
-          child: BestSellerListView(), //here we use cubit
+          child: NewestBooksListView(), //here we use cubit
         ),
       ],
     );
