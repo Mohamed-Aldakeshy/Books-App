@@ -5,11 +5,12 @@ import 'package:books_app/features/search/presentation/views/widgets/search_view
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+TextEditingController controller = TextEditingController();
+
 class SearchView extends StatelessWidget {
   const SearchView({
     super.key,
   });
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,7 +18,7 @@ class SearchView extends StatelessWidget {
         child: BlocProvider(
           create: (context) =>
               SearchBooksCubit(searchRepo: getIt.get<SearchRepoImpl>())
-                ..fetchSearchBooks(),
+                ..fetchSearchBooks(searchKey: controller.text),
           child: SearchViewBody(),
         ),
       ),

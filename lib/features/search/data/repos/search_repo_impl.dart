@@ -11,11 +11,12 @@ class SearchRepoImpl extends SearchRepo {
   SearchRepoImpl(this.apiService);
 
   @override
-  Future<Either<Failure, List<BookModel>>> fetchSearchBooks() async {
+  Future<Either<Failure, List<BookModel>>> fetchSearchBooks(
+      {required String searchKey}) async {
     try {
       var data = await apiService.get(
           endPoint:
-              'volumes?Filtering=free-ebooks&pXDzdJ_1E3oC=newest&q=subject:software');
+              'volumes?Filtering=free-ebooks&pXDzdJ_1E3oC=newest&q=subject:$searchKey');
       List<BookModel> booksList = [];
 
       for (var item in data['items']) {

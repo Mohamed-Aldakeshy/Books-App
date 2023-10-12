@@ -5,6 +5,8 @@ import 'package:books_app/features/search/presentation/views/widgets/search_resu
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+TextEditingController controller = TextEditingController();
+
 class SearchViewBody extends StatefulWidget {
   const SearchViewBody({super.key});
 
@@ -15,7 +17,8 @@ class SearchViewBody extends StatefulWidget {
 class _SearchViewBodyState extends State<SearchViewBody> {
   @override
   void initState() {
-    BlocProvider.of<SearchBooksCubit>(context).fetchSearchBooks();
+    BlocProvider.of<SearchBooksCubit>(context)
+        .fetchSearchBooks(searchKey: controller.text);
     super.initState();
   }
 
@@ -32,7 +35,13 @@ class _SearchViewBodyState extends State<SearchViewBody> {
               children: [
                 Padding(
                   padding: EdgeInsets.only(top: 10),
-                  child: CustomSearchTextField(),
+                  child: CustomSearchTextField(
+                    controller: controller,
+                    onPressed: () {
+                      BlocProvider.of<SearchBooksCubit>(context)
+                          .fetchSearchBooks(searchKey: controller.text);
+                    },
+                  ),
                 ),
                 const SizedBox(
                   height: 16,
@@ -49,13 +58,8 @@ class _SearchViewBodyState extends State<SearchViewBody> {
           ),
         ),
         SliverFillRemaining(
-          child: Expanded(child: SearchBooksListView()),
+          child: SearchBooksListView(),
         ),
-        SliverToBoxAdapter(
-          child: SizedBox(
-            height: 10,
-          ),
-        )
       ],
     );
   }
