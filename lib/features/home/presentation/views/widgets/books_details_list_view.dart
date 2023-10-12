@@ -17,6 +17,7 @@ class BooksDetailsListView extends StatelessWidget {
           return SizedBox(
             height: MediaQuery.of(context).size.height * 0.15,
             child: ListView.builder(
+              physics: const BouncingScrollPhysics(),
               itemCount: state.similartBooksCubitList.length,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
