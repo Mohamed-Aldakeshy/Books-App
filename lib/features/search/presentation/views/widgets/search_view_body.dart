@@ -25,7 +25,7 @@ class _SearchViewBodyState extends State<SearchViewBody> {
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
-      physics: const BouncingScrollPhysics(),
+      physics: const NeverScrollableScrollPhysics(),
       slivers: [
         SliverToBoxAdapter(
           child: Padding(
