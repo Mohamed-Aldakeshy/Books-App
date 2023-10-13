@@ -1,7 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:books_app/features/search/data/repos/search_repo.dart';
 import 'package:books_app/features/search/presentation/manager/search_cubit/search_state.dart';
-import 'package:flutter/material.dart';
 
 class SearchBooksCubit extends Cubit<SearchBooksState> {
   SearchBooksCubit({required this.searchRepo}) : super(SearchBooksInitial());
